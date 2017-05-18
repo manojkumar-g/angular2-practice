@@ -5,11 +5,14 @@
     <article class="inputs">
         <form action="">
             <h4>Add Links here</h4>
-            <h5>Title:</h5>
-            <input type="text"><br>
-            <h5>Link:</h5>
-            <input type="text"><br>
-            <button type="button" name="button">Submit</button>
+            Title:
+            <input type="text" #title><br>
+            Link:
+            <input type="text" #link><br>
+            <button type="button" name="button" (click)="addArticle(title,link)">Submit</button>
         </form>
     </article>
+    <section>
+        <app-article></app-article>
+    </section>
 </main>
