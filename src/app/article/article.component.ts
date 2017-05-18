@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Article} from './article.model'
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.styl']
 })
 export class ArticleComponent implements OnInit {
-  name:string;
-  url:string;
-  votes:number;
+  article:Article;
+
   constructor() {
-      this.name = 'Manoj'
-      this.url = 'github.com/manojkumar-g'
-      this.votes = 5
+      this.article = new Article('Manoj','github.com/manojkumar-g')
    }
-   voteUp(){
-       this.votes += 1;
+   voteUp():boolean{
+       this.article.voteUp();
+       return false;
    }
-   voteDown(){
-       this.votes -= 1;
+   voteDown():boolean{
+       this.article.voteDown();
+       return false;
    }
 
   ngOnInit() {
