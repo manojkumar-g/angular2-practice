@@ -12,7 +12,7 @@
             <button type="button" name="button" (click)="addArticle(title,link)">Submit</button>
         </form>
     </article>
-    <section>
-        <app-article></app-article>
+    <section *ngFor="let article of articles">
+        <app-article [article] = 'article'></app-article>
     </section>
 </main>
