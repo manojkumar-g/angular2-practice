@@ -6,10 +6,10 @@
         <form action="">
             <h4>Add Links here</h4>
             Title:
-            <input type="text" #title><br>
+            <input type="text" #title ><br>
             Link:
-            <input type="text" #link><br>
-            <button type="button" name="button" (click)="addArticle(title,link)">Submit</button>
+            <input type="text" #link (keyup.enter) = "addArticle(title.value,link.value); title.value = '';link.value=''"><br>
+            <button type="button" name="button" (click)="addArticle(title.value,link.value); title.value = '';link.value=''">Submit</button>
         </form>
     </article>
     <section *ngFor="let article of articles">

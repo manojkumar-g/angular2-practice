@@ -12,10 +12,8 @@ export class AppComponent {
           new Article('Manoj','github.com/manojkumar-g',5)
       ]
   }
-  addArticle(title:HTMLInputElement,url:HTMLInputElement):boolean{
-      this.articles.push(new Article(title.value,url.value));
-      title.value = ''
-      url.value = ''
+  addArticle(title:string,url:string):boolean{
+      this.articles.push(new Article(title,url));
       return false;
   }
 }
