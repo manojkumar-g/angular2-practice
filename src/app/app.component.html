@@ -3,7 +3,7 @@
         <h2>Reddit</h2>
     </header>
     <article class="inputs">
-        <form #articleForm = 'ngForm'>
+        <form #articleForm = 'ngForm' (ngSubmit) = 'addArticle()'>
             <h4>Add Links here</h4>
             Title:
             <input type="text"
@@ -17,7 +17,6 @@
             name="url"
             required
             >
-            {{model.name}}
             <br>
             Genre:
             <br/>
@@ -25,7 +24,8 @@
               <option class = 'genres' *ngFor ='let genre of genres' [value] = 'genre'>{{genre}}</option>
             </select>
             <br/>
-            <button type="button" name="button"
+            <button type="submit"
+            [disabled]="!articleForm.form.valid"
             >Submit</button>
         </form>
     </article>

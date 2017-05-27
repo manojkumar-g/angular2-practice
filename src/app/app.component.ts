@@ -16,8 +16,8 @@ export class AppComponent {
           new Article('Manoj','github.com/manojkumar-g',5)
       ]
   }
-  addArticle(title:string,url:string):boolean{
-      this.articles.push(new Article(title,url));
+  addArticle():boolean{
+      this.articles.push(new Article(this.model.name,this.model.url));
       return false;
   }
 }
