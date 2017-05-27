@@ -3,13 +3,30 @@
         <h2>Reddit</h2>
     </header>
     <article class="inputs">
-        <form action="">
+        <form #articleForm = 'ngForm'>
             <h4>Add Links here</h4>
             Title:
-            <input type="text" #title ><br>
+            <input type="text"
+            [(ngModel)] = 'model.name'
+            name="name"
+            required
+             ><br>
             Link:
-            <input type="text" #link (keyup.enter) = "addArticle(title.value,link.value); title.value = '';link.value=''"><br>
-            <button type="button" name="button" (click)="addArticle(title.value,link.value); title.value = '';link.value=''">Submit</button>
+            <input type="text"
+            [(ngModel)] = 'model.url'
+            name="url"
+            required
+            >
+            {{model.name}}
+            <br>
+            Genre:
+            <br/>
+            <select name="genres" >
+              <option class = 'genres' *ngFor ='let genre of genres' [value] = 'genre'>{{genre}}</option>
+            </select>
+            <br/>
+            <button type="button" name="button"
+            >Submit</button>
         </form>
     </article>
     <section *ngFor="let article of articles">

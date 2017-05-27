@@ -7,7 +7,11 @@ import {Article} from './article/article.model'
 })
 export class AppComponent {
   articles : Article[];
+  genres:string[];
+  model: Article;
   constructor(){
+      this.model = new Article('Title','http://');
+      this.genres = ['Music','Tech','Art'];
       this.articles = [
           new Article('Manoj','github.com/manojkumar-g',5)
       ]
