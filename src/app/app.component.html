@@ -29,7 +29,11 @@
             >Submit</button>
         </form>
     </article>
+    <section *ngIf = 'articles.length === 0'>
+      <h1>No elements to show..... :(</h1>
+    </section>
     <section *ngFor="let article of articles">
+        {{index}}
         <app-article [article] = 'article' (deleteArticle) = 'delete($event)'></app-article>
     </section>
 </main>

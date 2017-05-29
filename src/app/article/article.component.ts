@@ -3,7 +3,7 @@ import {Article} from './article.model'
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.styl']
+  styleUrls: ['./article.component.styl'],
 })
 export class ArticleComponent implements OnInit {
   @Input()

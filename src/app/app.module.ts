@@ -6,10 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ArticleComponent } from './article/article.component';
 
+import Highlight from './highlights.directive'
+
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleComponent
+    ArticleComponent,
+    Highlight
   ],
   imports: [
     BrowserModule,
