@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit ,Input, EventEmitter, Output} from '@angular/core';
 import {Article} from './article.model'
 @Component({
   selector: 'app-article',
@@ -8,6 +8,8 @@ import {Article} from './article.model'
 export class ArticleComponent implements OnInit {
   @Input()
   article:Article;
+  @Output()
+  deleteArticle:EventEmitter<String> = new EventEmitter();
    voteUp():boolean{
        this.article.voteUp();
        return false;
@@ -15,6 +17,10 @@ export class ArticleComponent implements OnInit {
    voteDown():boolean{
        this.article.voteDown();
        return false;
+   }
+   delete(){
+      console.log('trying to send delete request',this.article.name);
+      this.deleteArticle.emit(this.article.name)
    }
 
   ngOnInit() {

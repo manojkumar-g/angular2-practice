@@ -30,6 +30,6 @@
         </form>
     </article>
     <section *ngFor="let article of articles">
-        <app-article [article] = 'article'></app-article>
+        <app-article [article] = 'article' (deleteArticle) = 'delete($event)'></app-article>
     </section>
 </main>
